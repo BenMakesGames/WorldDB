@@ -1,0 +1,17 @@
+@page "{slug}"
+@model WorldDb.Pages.Species.DetailsModel
+@{
+    ViewData["Title"] = Model.Species!.Name;
+}
+
+<h1>@Model.Species.Name</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Classification</dt>
+    <dd class="col-sm-9">@Model.Species.Classification</dd>
+
+    <dt class="col-sm-3">Habitat</dt>
+    <dd class="col-sm-9">@Model.Species.Habitat</dd>
+</dl>
+
+<a asp-page="Index">Back to Species</a>

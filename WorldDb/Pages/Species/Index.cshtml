@@ -1,0 +1,34 @@
+@page
+@model WorldDb.Pages.Species.IndexModel
+@{
+    ViewData["Title"] = "Species";
+}
+
+<h1>Species</h1>
+
+@if (Model.AllSpecies.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Classification</th>
+                <th>Habitat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var species in Model.AllSpecies)
+            {
+                <tr>
+                    <td><a asp-page="Details" asp-route-slug="@species.Slug">@species.Name</a></td>
+                    <td>@species.Classification</td>
+                    <td>@species.Habitat</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No species found.</p>
+}

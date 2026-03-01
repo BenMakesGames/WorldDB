@@ -1,0 +1,17 @@
+@page "{slug}"
+@model WorldDb.Pages.Characters.DetailsModel
+@{
+    ViewData["Title"] = Model.Character!.Name;
+}
+
+<h1>@Model.Character.Name</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Description</dt>
+    <dd class="col-sm-9">@Model.Character.Description</dd>
+
+    <dt class="col-sm-3">Origin</dt>
+    <dd class="col-sm-9">@Model.Character.Origin</dd>
+</dl>
+
+<a asp-page="Index">Back to Characters</a>

@@ -1,0 +1,17 @@
+@page "{slug}"
+@model WorldDb.Pages.Countries.DetailsModel
+@{
+    ViewData["Title"] = Model.Country!.Name;
+}
+
+<h1>@Model.Country.Name</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Capital</dt>
+    <dd class="col-sm-9">@Model.Country.Capital</dd>
+
+    <dt class="col-sm-3">Region</dt>
+    <dd class="col-sm-9">@Model.Country.Region</dd>
+</dl>
+
+<a asp-page="Index">Back to Countries</a>
